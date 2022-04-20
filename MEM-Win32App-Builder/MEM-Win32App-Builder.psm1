@@ -3,8 +3,10 @@ $public  = @(Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath 'Publ
 $private = @(Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath 'Private/*.ps1') -Recurse -ErrorAction Stop)
 foreach ($import in @($public + $private)) {
     try {
+        Write-Host "Importing $import.FullName"
         . $import.FullName
-    } catch {
+    }
+    catch {
         throw "Unable to dot source [$($import.FullName)]"
     }
 }

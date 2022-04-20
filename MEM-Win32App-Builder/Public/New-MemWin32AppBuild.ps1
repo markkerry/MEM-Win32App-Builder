@@ -23,16 +23,28 @@ Function New-MemWin32AppBuild {
     )
 
     $appPath = Join-Path -Path $Path -ChildPath $Name
+    $moduleBase = $ExecutionContext.SessionState.Module.ModuleBase
+    $file = "IntuneWinAppUtil.exe"
+
+    if (($IsLinux -eq $true) -or ($IsMacOS -eq $true)) {
+        Write-Output "This function is for Windows only"
+        throw
+    }
 
     if (Test-Path -Path $appPath) {
         Write-Output "$appPath already exists"
-        exit
+        throw
     }
     else {
         New-Item $appPath -ItemType Directory > $null
     }
 
+    if(!(Test-Path -Path $appPath\$file)) {
+        downloadWin32AppUtil -Path $Path
+    }
 
+    $template = Join-Path -Path $moduleBase -ChildPath 'template'
+    Copy-Item -Path $template\* -Destination $appPath -Verbose
 }
 
 
