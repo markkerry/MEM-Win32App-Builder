@@ -12,7 +12,7 @@
 RootModule = 'MEM-Win32App-Builder.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.1.0'
+ModuleVersion = '0.1.1'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -71,7 +71,7 @@ Description = 'Creates an organised directory structure for building Microsoft E
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
     'New-MemWin32AppBuild'
-    'downloadWin32AppUtil'
+    'Invoke-DownloadWin32AppUtil'
 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
@@ -101,10 +101,10 @@ PrivateData = @{
         # Tags = @()
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/markkerry/MEM-Win32App-Builder/blob/main/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/markkerry/MEM-Win32App-Builder'
 
         # A URL to an icon representing this module.
         # IconUri = ''
