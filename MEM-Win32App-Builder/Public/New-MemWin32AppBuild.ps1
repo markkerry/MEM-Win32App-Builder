@@ -11,10 +11,12 @@ Function New-MemWin32AppBuild {
         Path of your local app packaging environment. E.g. "C:\Apps"
     .EXAMPLE
         New-MemWin32AppBuild -Name "App Name 1.0" -Path "C:\Apps"
+
+        Creates a new build env in C:\Apps
     #>
 
     [OutputType([string])]
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Position = 0, Mandatory = $true)]
         [string]$Name,

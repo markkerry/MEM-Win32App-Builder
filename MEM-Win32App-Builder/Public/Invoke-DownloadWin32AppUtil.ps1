@@ -5,9 +5,11 @@ function Invoke-DownloadWin32AppUtil {
     .DESCRIPTION
         Uses Invoke-WebRequest
     .EXAMPLE
-        Invoke-DownloadWin32AppUtil
+        Invoke-DownloadWin32AppUtil -Path C:\Apps
 
         Runs the command
+    .PARAMETER Path
+        Path to download the file
     #>
     [OutputType([string])]
     [CmdletBinding()]
