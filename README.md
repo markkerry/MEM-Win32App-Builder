@@ -1,6 +1,6 @@
 # MEM-Win32App-Builder
 
-![main](https://github.com/markkerry/MEM-Win32App-Builder/actions/workflows/CI.yml/badge.svg)
+![main](https://github.com/markkerry/MEM-Win32App-Builder/actions/workflows/CI.yaml/badge.svg)
 
 ![intune](media/Intune.png)
 
