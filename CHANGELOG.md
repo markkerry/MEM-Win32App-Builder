@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 * CI.yaml issues
+* Git tag version in `Manifest.test.ps1`
 
 ## [0.1.1] - Unreleased
 

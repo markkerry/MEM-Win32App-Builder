@@ -58,7 +58,7 @@ Function New-MemWin32AppBuild {
     Write-Output "Populating directory: $appPath"
     try {
         Copy-Item -Path $template\* -Destination $appPath -Recurse | Out-Null -ErrorAction Stop
-        Remove-Item -Path "$appPath\output\DELETEME.txt" -Force
+        Remove-Item -Path "$appPath\outputIntuneWin\DELETEME.txt" -Force
         Remove-Item -Path "$appPath\source\DELETEME.txt" -Force
     }
     catch {

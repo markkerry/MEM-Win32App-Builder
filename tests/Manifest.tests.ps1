@@ -64,13 +64,16 @@ Describe 'Module manifest' {
     }
 }
 
-Describe 'Git tagging' -Skip {
+Describe 'Git tagging' {
     BeforeAll {
         $gitTagVersion = $null
 
         if ($git = Get-Command git -CommandType Application -ErrorAction SilentlyContinue) {
-            $thisCommit = & $git log --decorate --oneline HEAD~1..HEAD
-            if ($thisCommit -match '\s*(\d+(?:\.\d+)*)') { $gitTagVersion = $matches[1] }
+            #$thisCommit = & $git log --decorate --oneline HEAD~1..HEAD
+            $thisCommit = & $git tag
+            if ($thisCommit -match '\d.\d.\d') {
+                $gitTagVersion = $matches[0]
+            }
         }
     }
 
