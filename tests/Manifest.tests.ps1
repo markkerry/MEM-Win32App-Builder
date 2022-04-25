@@ -70,7 +70,7 @@ Describe 'Git tagging' -Skip {
 
         if ($git = Get-Command git -CommandType Application -ErrorAction SilentlyContinue) {
             $thisCommit = & $git log --decorate --oneline HEAD~1..HEAD
-            if ($thisCommit -match 'tag:\s*(\d+(?:\.\d+)*)') { $gitTagVersion = $matches[1] }
+            if ($thisCommit -match '\s*(\d+(?:\.\d+)*)') { $gitTagVersion = $matches[1] }
         }
     }
 
