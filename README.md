@@ -8,7 +8,7 @@ Creates an organised directory structure for building Microsoft Endpoint Manager
 
 ## Overview
 
-Module version 0.1.1 contains IntuneWinAppUtil.exe version 6.2107.52.0
+Module version 0.1.2 contains IntuneWinAppUtil.exe version 6.2107.52.0
 
 ## Installation
 
