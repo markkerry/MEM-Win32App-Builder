@@ -30,9 +30,13 @@ Update-Module -Name "MEM-Win32App-Builder"
 New-MemWin32AppBuild -Name "Sublime-Text-4113" -Path "C:\AppPackages"
 ```
 
+![New-MemeWin32AppBuild](media/New-MemWin32AppBuild.png)
+
 ```powershell
 Invoke-DownloadWin32AppUtil -Path "C:\AppPackages"
 ```
+
+![Invoke-DownloadWin32AppUtil](media/Invoke-DownloadWin32AppUtil.png)
 
 ## Example Scripts
 
