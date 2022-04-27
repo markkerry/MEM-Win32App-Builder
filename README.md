@@ -8,7 +8,7 @@ PowerShell module to create an organised directory structure for building Micros
 
 ## Overview
 
-Creating win32 apps in Microsoft Endpoint Manager can become quite complex if the app you are installing has multiple install commands, or a custom detection/requirements script. And quite often you will have to document the the process and decisions made for use at a later date when updating the package. This module will enable you to create a directory structure to help when packaging the app, store information in the `readme.md` file, which can then be stored in source control.
+Creating win32 apps in Microsoft Endpoint Manager can become quite complex if the app you are installing has multiple install commands, or a custom detection/requirements script. And quite often you will have to document the the process and decisions made for use at a later date when updating the package. This module will enable you to create the directory structure to help packaging the app, and store information in the `readme.md` file which can then be stored in source control.
 
 Module version 0.1.3 contains IntuneWinAppUtil.exe version 6.2107.52.0
 
