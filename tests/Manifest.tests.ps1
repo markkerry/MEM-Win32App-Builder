@@ -64,7 +64,7 @@ Describe 'Module manifest' {
     }
 }
 
-Describe 'Git tagging' {
+Describe 'Git tagging' -Skip {
     BeforeAll {
         $gitTagVersion = $null
 
