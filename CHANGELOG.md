@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.1.4] - Released
+
+### Changed
+
+* Updated IntuneWinAppUtil.exe from 6.2107.52.0 to 6.2206.38.0
+
 ## [0.1.3] - Released
 
 ### Changed
