@@ -1,6 +1,7 @@
 # MEM-Win32App-Builder
 
 ![main](https://github.com/markkerry/MEM-Win32App-Builder/actions/workflows/CI.yaml/badge.svg)
+[![PowerShellGallery](https://img.shields.io/badge/PowerShell%20Gallery-MEM--Win32App--Builder-blue)](https://www.powershellgallery.com/packages/MEM-Win32App-Builder/0.1.4)
 
 ![intune](media/Intune.png)
 
