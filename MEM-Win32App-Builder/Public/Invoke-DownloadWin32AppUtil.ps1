@@ -20,7 +20,7 @@ function Invoke-DownloadWin32AppUtil {
 
     # This will most likely only be run by Windows admins
     if (($IsLinux -eq $true) -or ($IsMacOS -eq $true)) {
-        Write-Host " - " -ForegroundColor Red -NoNewline
+        Write-Host " x " -ForegroundColor Red -NoNewline
         Write-Host "This function is for Windows only"
         return
     }
@@ -48,20 +48,20 @@ function Invoke-DownloadWin32AppUtil {
     }
 
     if (!(Test-Path -Path $Path)) {
-        Write-Host " - " -ForegroundColor Green -NoNewline
+        Write-Host " + " -ForegroundColor Green -NoNewline
         Write-Host "Creating: $Path"
         try {
             New-Item $Path -ItemType Directory | Out-Null -ErrorAction Stop
         }
         catch {
-            Write-Host " - " -ForegroundColor Red -NoNewline
+            Write-Host " x " -ForegroundColor Red -NoNewline
             Write-Host "Failed to create $Path"
             return
         }
     }
 
     # Download IntuneWinAppUtil.exe
-    Write-Host " - " -ForegroundColor Green -NoNewline
+    Write-Host " + " -ForegroundColor Green -NoNewline
     Write-Host "Downloading: $file"
     try {
         Invoke-WebRequest @downloadParams
@@ -74,11 +74,11 @@ function Invoke-DownloadWin32AppUtil {
 
     $download = Get-ChildItem -Path $outPath | Select-Object FullName -ExpandProperty FullName
     if ($download) {
-        Write-Host " - " -ForegroundColor Green -NoNewline
+        Write-Host " + " -ForegroundColor Green -NoNewline
         Write-Host "Success: $download"
     }
     else {
-        Write-Host " - " -ForegroundColor Red -NoNewline
+        Write-Host " x " -ForegroundColor Red -NoNewline
         Write-Host "Failed to download $file"
     }
 }

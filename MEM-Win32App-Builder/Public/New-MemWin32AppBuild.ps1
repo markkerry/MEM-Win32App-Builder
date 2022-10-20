@@ -34,32 +34,32 @@ Function New-MemWin32AppBuild {
 
     # This will most likely only be run by Windows admins
     if (($IsLinux -eq $true) -or ($IsMacOS -eq $true)) {
-        Write-Host " - " -ForegroundColor Red -NoNewline
+        Write-Host " x " -ForegroundColor Red -NoNewline
         Write-Host "This function is designed to run on Windows only"
         return
     }
 
     # Error if directory already exists. If not, create it
     if (Test-Path -Path $appPath) {
-        Write-Host " - " -ForegroundColor Red -NoNewline
+        Write-Host " x " -ForegroundColor Red -NoNewline
         Write-Host "$appPath already exists. Delete before trying again."
         return
     }
     else {
-        Write-Host " - " -ForegroundColor Green -NoNewline
+        Write-Host " + " -ForegroundColor Green -NoNewline
         Write-Host "Creating directory"
         try {
             New-Item $appPath -ItemType Directory | Out-Null -ErrorAction Stop
         }
         catch {
-            Write-Host " - " -ForegroundColor Red -NoNewline
+            Write-Host " x " -ForegroundColor Red -NoNewline
             Write-Host "Failed to create $appPath"
             return
         }
     }
 
     # Copy the template files to the new directory
-    Write-Host " - " -ForegroundColor Green -NoNewline
+    Write-Host " + " -ForegroundColor Green -NoNewline
     Write-Host "Populating directory"
     try {
         Copy-Item -Path $template\* -Destination $appPath -Recurse | Out-Null -ErrorAction Stop
@@ -69,13 +69,13 @@ Function New-MemWin32AppBuild {
         $appFiles += (Get-ChildItem -Path $appPath -Recurse | Where-Object {$_.PSIsContainer -eq $True}) | Where-Object {$_.GetFileSystemInfos().Count -eq 0} | Select-Object FullName -ExpandProperty FullName
         $appFiles += (Get-ChildItem -Path "$appPath" -Recurse | Where-Object {$_.PSIsContainer -eq $False}) | Select-Object FullName -ExpandProperty FullName
         foreach ($appFile in $appFiles) {
-            Write-Host "   - " -ForegroundColor Green -NoNewline
+            Write-Host "   + " -ForegroundColor Green -NoNewline
             Write-Host "$appFile"
         }
     }
     catch {
         catch {
-            Write-Host " - " -ForegroundColor Red -NoNewline
+            Write-Host " x " -ForegroundColor Red -NoNewline
             Write-Host "Failed to copy template to $appPath"
             return
         }
